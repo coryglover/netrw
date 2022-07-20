@@ -92,8 +92,10 @@ class SpatialSmallWorld(BaseRewirer):
                 G.add_edge(randomList[0][0],randomList[0][1])
             if verbose:
                 if does_remove:
-                    removed_edges[t] = [rand_edge[0],rand_edge[1]]
-                added_edges[t] = [randomList[0][0],randomList[0][1]]
+                    removed_edges[t] = [(rand_edge[0],rand_edge[1])]
+                else:
+                    removed_edges[t] = []
+                added_edges[t] = [(randomList[0][0],randomList[0][1])]
         if verbose:
             return G, removed_edges, added_edges
         else:
